@@ -1,0 +1,34 @@
+extends Control
+
+@onready var dinheiro_text: Label = $GridContainer/HBoxContainer/Dinheiro
+@onready var tempo_text: Label = $GridContainer/HBoxContainer/Tempo
+@onready var ponto_conhecimento_text: Label = $GridContainer/HBoxContainer/PontoConhecimento
+
+func _ready() -> void:
+	# Atualiza os textos iniciais
+	_atualizar_dinheiro(Economia.dinheiro)
+	_atualizar_conhecimento(Economia.conhecimento)
+	
+	# Conecta aos sinais da classe global
+	Economia.connect("dinheiro_alterado", Callable(self, "_atualizar_dinheiro"))
+	Economia.connect("ciclo_concluido", Callable(self, "_atualizar_ciclo"))
+
+
+func _process(delta: float) -> void:
+	# Atualiza o tempo restante do ciclo
+	var tempo_restante = Economia.ciclo_duracao - Economia.tempo_ciclo
+	var minutos = int(tempo_restante) / 60
+	var segundos = int(tempo_restante) % 60
+	tempo_text.text = "Tempo: %02d:%02d" % [minutos, segundos]
+
+
+func _atualizar_dinheiro(novo_valor: float) -> void:
+	dinheiro_text.text = "Dinheiro: " + str(round(novo_valor))
+
+func _atualizar_conhecimento(novo_valor: int) -> void:
+	ponto_conhecimento_text.text = "Conhecimento: " + str(novo_valor)
+
+func _atualizar_ciclo(conhecimento: int, ganho: float, novo_saldo: float) -> void:
+	ponto_conhecimento_text.text = "Conhecimento: " + str(conhecimento)
+	# Atualiza o dinheiro também ao final do ciclo
+	_atualizar_dinheiro(novo_saldo)

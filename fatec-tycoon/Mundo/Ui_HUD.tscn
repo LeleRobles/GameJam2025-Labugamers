@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmskdwoh34vem"]
+[gd_scene load_steps=6 format=3 uid="uid://bmskdwoh34vem"]
 
 [ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprite sheet for Basic Pack.png" id="1_jspuf"]
+[ext_resource type="Script" uid="uid://dwtwbjxauaqve" path="res://Mundo/ui_hud.gd" id="1_wws32"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wws32"]
 texture = ExtResource("1_jspuf")
@@ -33,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wws32")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -51,7 +53,7 @@ size_flags_vertical = 4
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/HBoxContainer"]
+[node name="Tempo" type="Label" parent="GridContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -61,14 +63,24 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_wws32")
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="GridContainer/HBoxContainer"]
+[node name="Dinheiro" type="Label" parent="GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_wws32")
+
+[node name="Label6" type="Label" parent="GridContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="PontoConhecimento" type="Label" parent="GridContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_wws32")
 
 [node name="Label5" type="Label" parent="GridContainer/HBoxContainer"]
-custom_minimum_size = Vector2(620, 0)
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 
 [node name="Button" type="Button" parent="GridContainer/HBoxContainer"]
