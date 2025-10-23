@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmskdwoh34vem"]
+[gd_scene load_steps=7 format=3 uid="uid://bmskdwoh34vem"]
 
-[ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprite sheet for Basic Pack.png" id="1_jspuf"]
-[ext_resource type="Script" uid="uid://dwtwbjxauaqve" path="res://Mundo/ui_hud.gd" id="1_wws32"]
+[ext_resource type="Script" uid="uid://dwtwbjxauaqve" path="res://Mundo/Scripts/ui_hud.gd" id="1_bplc1"]
+[ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprite sheet for Basic Pack.png" id="2_1oq8u"]
+[ext_resource type="Texture2D" uid="uid://bcuxu1av86eq3" path="res://Assets/panel_brown.png" id="3_1oq8u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wws32"]
-texture = ExtResource("1_jspuf")
+texture = ExtResource("2_1oq8u")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
@@ -12,7 +13,7 @@ texture_margin_bottom = 5.0
 region_rect = Rect2(275, 212, 90, 25)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jm7b1"]
-texture = ExtResource("1_jspuf")
+texture = ExtResource("2_1oq8u")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
@@ -20,7 +21,7 @@ texture_margin_bottom = 2.0
 region_rect = Rect2(869, 230, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jspuf"]
-texture = ExtResource("1_jspuf")
+texture = ExtResource("2_1oq8u")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
@@ -34,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wws32")
+script = ExtResource("1_bplc1")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -92,3 +93,20 @@ size_flags_vertical = 4
 theme_override_styles/hover = SubResource("StyleBoxTexture_jm7b1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jm7b1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jspuf")
+
+[node name="Q1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -322.0
+offset_top = -128.0
+offset_right = 317.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_1oq8u")
+stretch_mode = 1
+
+[connection signal="pressed" from="GridContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

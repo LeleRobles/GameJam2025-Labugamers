@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://fdg4kb3s826e"]
+
+[ext_resource type="Script" uid="uid://rfcphj7fitds" path="res://Predios/Inventario_Predios/predio_slot.gd" id="1_i60a8"]
+[ext_resource type="Texture2D" uid="uid://iactduhjdfse" path="res://Assets/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_s3lbg"]
+[ext_resource type="PackedScene" uid="uid://bbpjysgobfum0" path="res://Mundo/Scenes/prédio.tscn" id="2_02vsj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i60a8"]
+atlas = ExtResource("1_s3lbg")
+region = Rect2(16, 278, 64, 42)
+
+[node name="PredioSlot" type="Button"]
+custom_minimum_size = Vector2(112, 112)
+offset_right = 112.0
+offset_bottom = 112.0
+text = "item"
+script = ExtResource("1_i60a8")
+predio_packed_scene = ExtResource("2_02vsj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 112.0
+texture = SubResource("AtlasTexture_i60a8")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 20
+text = "99
+"
+horizontal_alignment = 2

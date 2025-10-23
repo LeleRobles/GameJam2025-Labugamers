@@ -32,3 +32,7 @@ func _atualizar_ciclo(conhecimento: int, ganho: float, novo_saldo: float) -> voi
 	ponto_conhecimento_text.text = "Conhecimento: " + str(conhecimento)
 	# Atualiza o dinheiro também ao final do ciclo
 	_atualizar_dinheiro(novo_saldo)
+
+
+func _on_button_pressed() -> void:
+	print("debug")# Replace with function body.

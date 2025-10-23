@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk0e0nbjoub0d"]
+
+[ext_resource type="Script" uid="uid://2yvj1cgne22m" path="res://Predios/Inventario_Predios/shop.gd" id="1_0q4rf"]
+[ext_resource type="PackedScene" uid="uid://fdg4kb3s826e" path="res://Predios/Inventario_Predios/PredioSlot.tscn" id="1_d11yn"]
+[ext_resource type="Script" uid="uid://t6rcrylp2yok" path="res://Predios/Inventario_Predios/inventory_ui.gd" id="2_dgt7x"]
+[ext_resource type="Resource" uid="uid://b6hv2552s4ck4" path="res://Predios/Inventario_Predios/construcoes_disponiveis.tres" id="3_jjlic"]
+
+[node name="Control" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0q4rf")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = -112.0
+offset_right = 230.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+light_mask = 3
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+columns = 5
+script = ExtResource("2_dgt7x")
+data = ExtResource("3_jjlic")
+
+[node name="PredioSlot" parent="PanelContainer/GridContainer" instance=ExtResource("1_d11yn")]
+layout_mode = 2
+
+[node name="PredioSlot2" parent="PanelContainer/GridContainer" instance=ExtResource("1_d11yn")]
+layout_mode = 2
+
+[node name="PredioSlot3" parent="PanelContainer/GridContainer" instance=ExtResource("1_d11yn")]
+layout_mode = 2
+
+[node name="Descrição" type="Label" parent="."]
+custom_minimum_size = Vector2(144, 128)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -127.0
+offset_right = -48.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Teste"
+horizontal_alignment = 1
+vertical_alignment = 1
