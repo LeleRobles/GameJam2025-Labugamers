@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://rfcphj7fitds" path="res://Predios/Inventario_Predios/predio_slot.gd" id="1_i60a8"]
 [ext_resource type="Texture2D" uid="uid://iactduhjdfse" path="res://Assets/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_s3lbg"]
-[ext_resource type="PackedScene" uid="uid://bbpjysgobfum0" path="res://Mundo/Scenes/prédio.tscn" id="2_02vsj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijduk"]
+bg_color = Color(0.8913, 0.851825, 0.669904, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i60a8"]
 atlas = ExtResource("1_s3lbg")
@@ -12,9 +14,9 @@ region = Rect2(16, 278, 64, 42)
 custom_minimum_size = Vector2(112, 112)
 offset_right = 112.0
 offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ijduk")
 text = "item"
 script = ExtResource("1_i60a8")
-predio_packed_scene = ExtResource("2_02vsj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(112, 112)

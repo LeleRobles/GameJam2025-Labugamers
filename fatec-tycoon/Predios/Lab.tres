@@ -11,7 +11,13 @@ region = Rect2(192, 170, 64, 54)
 script = ExtResource("1_gxplj")
 nome = "Laborátio de Informática"
 preco = 1000.0
-descricao = "Um laborátorio com computadores 
-de alta qualidade."
+descricao = "Laborátorio.
+Preco: 1000
+Buff: da 4 de 
+conhecimento a
+mais por ciclo 
+e 125% a mais de verba base.
+"
 texture = SubResource("AtlasTexture_sh4dp")
+buff_multiplicador = 2.5
 metadata/_custom_type_script = "uid://gocwvwp6h60f"

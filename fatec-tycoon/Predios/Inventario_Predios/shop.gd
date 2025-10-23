@@ -16,4 +16,12 @@ func _ready():
 				slot.set_slot_data(predios_data[i])
 
 func update_descricao(new_text: String) -> void:
+	
 	descricao_label.text = new_text
+	descricao_label.add_theme_color_override("font_color", Color.BLACK)
+	
+
+
+func _on_close_menu_shop_button_pressed() -> void:
+	main_ref.input_enabled = true
+	queue_free() # Replace with function body.

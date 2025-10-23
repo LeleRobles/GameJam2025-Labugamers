@@ -13,4 +13,5 @@ nome = "Quadra"
 preco = 500.0
 descricao = "Recreação e adrenalina."
 texture = SubResource("AtlasTexture_qyjji")
+buff_multiplicador = 2.0
 metadata/_custom_type_script = "uid://gocwvwp6h60f"

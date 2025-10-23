@@ -8,6 +8,7 @@ var data_predio : SlotsPredio : set = set_slot_data
 @onready var label: Label = $Label
 @export var predio_packed_scene: PackedScene
 
+
 var main_ref  # referência para o Main
 
 func _ready():
@@ -20,10 +21,29 @@ func _ready():
 		main_ref = get_tree().current_scene
 
 func _pressed():
-	if main_ref and data_predio:   # data_predio é o Resource que veio do array
-		main_ref.place_building(main_ref.selected_tile, data_predio.predio_data)
-		get_parent().get_parent().queue_free()
-		
+	if main_ref and data_predio:
+		var predio_data = data_predio.predio_data
+
+		# Verifica se há dinheiro suficiente
+		if Economia.dinheiro >= predio_data.preco:
+			# Subtrai o preço do prédio
+			Economia.dinheiro -= predio_data.preco
+
+			# Adiciona o prédio à lista e registra a despesa
+			Economia.registrar_predio(predio_data)
+
+			# Atualiza o valor de dinheiro na HUD
+			Economia.emit_signal("dinheiro_alterado", Economia.dinheiro)
+
+			# Constrói o prédio no mapa
+			main_ref.place_building(main_ref.selected_tile, predio_data)
+
+			# Fecha o menu
+			get_parent().get_parent().get_parent().queue_free()
+			main_ref.input_enabled = true
+		else:
+			main_ref.instanciar_Modal_Dinheiro()
+	
 func set_slot_data(value : SlotsPredio) -> void:
 	data_predio = value
 	if data_predio == null:

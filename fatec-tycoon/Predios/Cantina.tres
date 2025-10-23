@@ -11,7 +11,9 @@ region = Rect2(16, 278, 64, 42)
 script = ExtResource("1_1ikoe")
 nome = "Cantina"
 preco = 300.0
-descricao = "Um lugar de paz 
-para encher a barriga"
+descricao = "Cantina.
+Preço: 300
+Dá 50% de verba base a mais."
 texture = SubResource("AtlasTexture_awt6c")
+buff_multiplicador = 1.5
 metadata/_custom_type_script = "uid://gocwvwp6h60f"

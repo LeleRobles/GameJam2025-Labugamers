@@ -4,6 +4,12 @@ extends Control
 @onready var tempo_text: Label = $GridContainer/HBoxContainer/Tempo
 @onready var ponto_conhecimento_text: Label = $GridContainer/HBoxContainer/PontoConhecimento
 
+@export var doubleSpeed: Texture
+@export var normalSpeed: Texture
+
+var is_fast := false
+var game_state = true
+
 func _ready() -> void:
 	# Atualiza os textos iniciais
 	_atualizar_dinheiro(Economia.dinheiro)
@@ -36,3 +42,22 @@ func _atualizar_ciclo(conhecimento: int, ganho: float, novo_saldo: float) -> voi
 
 func _on_button_pressed() -> void:
 	print("debug")# Replace with function body.
+
+
+func _on_pause_pressed() -> void:
+	if game_state == true:
+		game_state = false
+		get_tree().paused = true
+	elif game_state == false:
+		get_tree().paused = false
+		game_state = true
+
+
+
+
+
+func _on_x_speed_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Engine.time_scale = 2.0
+	else:
+		Engine.time_scale = 1.0
