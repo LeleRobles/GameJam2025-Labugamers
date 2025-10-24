@@ -23,5 +23,6 @@ func update_descricao(new_text: String) -> void:
 
 
 func _on_close_menu_shop_button_pressed() -> void:
+	SoundMana.tocar_som(SoundMana.CONFIRMA)
 	main_ref.input_enabled = true
 	queue_free() # Replace with function body.

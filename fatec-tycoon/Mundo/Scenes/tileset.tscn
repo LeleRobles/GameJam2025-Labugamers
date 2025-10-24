@@ -1,18 +1,20 @@
-[gd_scene load_steps=26 format=4 uid="uid://dylo4gm20bp3e"]
+[gd_scene load_steps=28 format=4 uid="uid://dylo4gm20bp3e"]
 
-[ext_resource type="Texture2D" uid="uid://iactduhjdfse" path="res://Assets/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_0oout"]
-[ext_resource type="Script" uid="uid://8cg24p4fplkb" path="res://Mundo/Scripts/tileset.gd" id="1_ogrvp"]
+[ext_resource type="Texture2D" uid="uid://iactduhjdfse" path="res://Assets/Sprites/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_0oout"]
+[ext_resource type="Script" uid="uid://8cg24p4fplkb" path="res://Mundo/Scenes/tileset.gd" id="1_ogrvp"]
 [ext_resource type="Script" uid="uid://cljgnbfskv7at" path="res://Mundo/Scripts/player_camera.gd" id="2_ogrvp"]
-[ext_resource type="Texture2D" uid="uid://cr2acavnrv43k" path="res://Assets/grass.png" id="3_bf85i"]
-[ext_resource type="Texture2D" uid="uid://du3sw7rng7mse" path="res://Assets/tile.png" id="4_5jiec"]
+[ext_resource type="Texture2D" uid="uid://cr2acavnrv43k" path="res://Assets/Sprites/grass.png" id="3_bf85i"]
+[ext_resource type="Texture2D" uid="uid://du3sw7rng7mse" path="res://Assets/Sprites/tile.png" id="4_5jiec"]
 [ext_resource type="PackedScene" uid="uid://d0jpxd15ush3g" path="res://Mundo/Scenes/high_light_tile.tscn" id="5_7qr2r"]
-[ext_resource type="Texture2D" uid="uid://ci4i4qlsmfsa6" path="res://Assets/1 Tiles/FieldsTileset.png" id="5_webup"]
-[ext_resource type="Texture2D" uid="uid://dyw1swblpcgem" path="res://Assets/1 Tiles/FieldsTilesetTest.png" id="6_jyrwp"]
-[ext_resource type="Texture2D" uid="uid://bx3qso0n1ng8v" path="res://Assets/spritesheet-coisas.png" id="7_wldyl"]
-[ext_resource type="Texture2D" uid="uid://dbc3e751flxy1" path="res://Assets/roadTextures_tilesheet@2.png" id="8_hbyog"]
-[ext_resource type="Texture2D" uid="uid://dvia5foo5cr0j" path="res://Assets/roadTextures_tilesheet.png" id="9_1lbic"]
-[ext_resource type="Texture2D" uid="uid://c05fyhw8ny31b" path="res://Assets/panel_grey_blue.png" id="10_hbyog"]
-[ext_resource type="Texture2D" uid="uid://b203ga5d2tiuh" path="res://Assets/EDITADOroadTextures_tilesheet@2 - Copia.png" id="11_1lbic"]
+[ext_resource type="Texture2D" uid="uid://ci4i4qlsmfsa6" path="res://Assets/Sprites/1 Tiles/FieldsTileset.png" id="5_webup"]
+[ext_resource type="Texture2D" uid="uid://dyw1swblpcgem" path="res://Assets/Sprites/1 Tiles/FieldsTilesetTest.png" id="6_jyrwp"]
+[ext_resource type="Texture2D" uid="uid://bx3qso0n1ng8v" path="res://Assets/Sprites/spritesheet-coisas.png" id="7_wldyl"]
+[ext_resource type="Texture2D" uid="uid://dbc3e751flxy1" path="res://Assets/Sprites/roadTextures_tilesheet@2.png" id="8_hbyog"]
+[ext_resource type="Texture2D" uid="uid://dvia5foo5cr0j" path="res://Assets/Sprites/roadTextures_tilesheet.png" id="9_1lbic"]
+[ext_resource type="Texture2D" uid="uid://c05fyhw8ny31b" path="res://Assets/Sprites/panel_grey_blue.png" id="10_hbyog"]
+[ext_resource type="Texture2D" uid="uid://b203ga5d2tiuh" path="res://Assets/Sprites/EDITADOroadTextures_tilesheet@2 - Copia.png" id="11_1lbic"]
+[ext_resource type="AudioStream" uid="uid://br7r14mvub1ku" path="res://Assets/Sons/sons/click1.ogg" id="14_fp3gx"]
+[ext_resource type="AudioStream" uid="uid://brvo3uyl6qpa8" path="res://Assets/Sons/sons/passarinhos pra por de fundo.wav" id="15_sltjx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybxfq"]
 texture = ExtResource("1_0oout")
@@ -4300,3 +4302,9 @@ script = ExtResource("2_ogrvp")
 position = Vector2(575, 265)
 scale = Vector2(2.54167, 2.54167)
 texture = SubResource("AtlasTexture_1lbic")
+
+[node name="ClickAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_fp3gx")
+
+[node name="PassarimAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_sltjx")

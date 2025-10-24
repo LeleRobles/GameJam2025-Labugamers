@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Economia="*res://Mundo/Scripts/Economia.gd"
+SoundMana="*res://Manager/sound_manager.gd"
 
 [input]
 

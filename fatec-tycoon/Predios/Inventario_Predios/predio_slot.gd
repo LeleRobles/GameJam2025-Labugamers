@@ -7,6 +7,9 @@ var data_predio : SlotsPredio : set = set_slot_data
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var label: Label = $Label
 @export var predio_packed_scene: PackedScene
+@onready var sfx_player: AudioStreamPlayer2D = $PobreAudio
+@onready var constroi_audio: AudioStreamPlayer2D = $ConstroiAudio
+
 
 
 var main_ref  # referência para o Main
@@ -22,10 +25,12 @@ func _ready():
 
 func _pressed():
 	if main_ref and data_predio:
+		
 		var predio_data = data_predio.predio_data
 
 		# Verifica se há dinheiro suficiente
 		if Economia.dinheiro >= predio_data.preco:
+			
 			# Subtrai o preço do prédio
 			Economia.dinheiro -= predio_data.preco
 
@@ -36,12 +41,17 @@ func _pressed():
 			Economia.emit_signal("dinheiro_alterado", Economia.dinheiro)
 
 			# Constrói o prédio no mapa
+			SoundMana.tocar_som(SoundMana.CONSTROI)
+			await get_tree().create_timer(0.1).timeout
 			main_ref.place_building(main_ref.selected_tile, predio_data)
-
+			
 			# Fecha o menu
 			get_parent().get_parent().get_parent().queue_free()
+			
 			main_ref.input_enabled = true
 		else:
+			
+			SoundMana.tocar_som(SoundMana.ERRO)
 			main_ref.instanciar_Modal_Dinheiro()
 	
 func set_slot_data(value : SlotsPredio) -> void:

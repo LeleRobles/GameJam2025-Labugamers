@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://2yvj1cgne22m" path="res://Predios/Inventario_Predios/shop.gd" id="1_0q4rf"]
 [ext_resource type="PackedScene" uid="uid://fdg4kb3s826e" path="res://Predios/Inventario_Predios/PredioSlot.tscn" id="1_d11yn"]
 [ext_resource type="Script" uid="uid://t6rcrylp2yok" path="res://Predios/Inventario_Predios/inventory_ui.gd" id="2_dgt7x"]
-[ext_resource type="Texture2D" uid="uid://bcuxu1av86eq3" path="res://Assets/panel_brown.png" id="2_jjlic"]
+[ext_resource type="Texture2D" uid="uid://bcuxu1av86eq3" path="res://Assets/Sprites/panel_brown.png" id="2_jjlic"]
 [ext_resource type="Resource" uid="uid://b6hv2552s4ck4" path="res://Predios/Inventario_Predios/construcoes_disponiveis.tres" id="3_jjlic"]
-[ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprite sheet for Basic Pack.png" id="6_uv2ya"]
+[ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprites/Sprite sheet for Basic Pack.png" id="6_uv2ya"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uv2ya"]
 texture = ExtResource("2_jjlic")

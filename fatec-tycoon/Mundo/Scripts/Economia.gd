@@ -44,6 +44,7 @@ func aplicar_ciclo() -> void:
 	print("Despesas:", round(despesas_totais))
 	print("Ganho no ciclo:", round(ganho_ciclo))
 	print("Novo saldo:", round(dinheiro))
+	SoundMana.tocar_som(SoundMana.CICLO)
 
 func registrar_predio(predio_data):
 	if predio_data == null:

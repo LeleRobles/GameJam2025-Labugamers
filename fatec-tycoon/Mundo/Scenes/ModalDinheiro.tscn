@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://l30vqj0memra"]
 
-[ext_resource type="Script" uid="uid://c3xsydfb82ah6" path="res://Mundo/Scenes/modal_dinheiro.gd" id="1_h5hu2"]
-[ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprite sheet for Basic Pack.png" id="1_u5gxo"]
+[ext_resource type="Script" uid="uid://c3xsydfb82ah6" path="res://Mundo/Scripts/modal_dinheiro.gd" id="1_h5hu2"]
+[ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprites/Sprite sheet for Basic Pack.png" id="1_u5gxo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5hu2"]
 texture = ExtResource("1_u5gxo")

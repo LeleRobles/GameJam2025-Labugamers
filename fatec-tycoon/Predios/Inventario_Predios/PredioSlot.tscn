@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://fdg4kb3s826e"]
 
 [ext_resource type="Script" uid="uid://rfcphj7fitds" path="res://Predios/Inventario_Predios/predio_slot.gd" id="1_i60a8"]
-[ext_resource type="Texture2D" uid="uid://iactduhjdfse" path="res://Assets/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_s3lbg"]
+[ext_resource type="Texture2D" uid="uid://iactduhjdfse" path="res://Assets/Sprites/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_s3lbg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijduk"]
 bg_color = Color(0.8913, 0.851825, 0.669904, 1)
