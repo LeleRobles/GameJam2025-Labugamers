@@ -11,7 +11,7 @@ var ciclo_duracao: float = 30.0
 var tempo_ciclo: float = 0.0
 var conhecimento_mult = 1
 var mult_dinheiro = 1
-var preco_ciclo_upg = 200
+var preco_ciclo_upg = 20000
 var preco_mult_upg = 10000
 var preco_desp_upg = 10000
 
