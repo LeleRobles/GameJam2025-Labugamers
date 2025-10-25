@@ -2,6 +2,7 @@ extends Control
 
 const StatsModal = preload("res://Mundo/Scenes/StatsModal.tscn")
 const UPGRADE_MODAL_2 = preload("res://Predios/Inventario_Predios/UpgradeModal2.tscn")
+const TUTORIAL = preload("res://Mundo/Scenes/Tutorial.tscn")
 @onready var dinheiro_text: Label = $GridContainer/HBoxContainer2/HBoxContainer/Dinheiro
 @onready var tempo_text: Label = $GridContainer/HBoxContainer2/HBoxContainer/Tempo
 @onready var ponto_conhecimento_text: Label = $GridContainer/HBoxContainer2/HBoxContainer/PontoConhecimento
@@ -60,7 +61,8 @@ func _atualizar_ciclo(conhecimento: int, ganho: float, novo_saldo: float) -> voi
 
 func _on_button_pressed() -> void:
 	SoundMana.tocar_som(SoundMana.CONFIRMA)
-	print("debug")# Replace with function body.
+	var tutorial_instance = TUTORIAL.instantiate()
+	add_child(tutorial_instance)
 
 
 func _on_pause_pressed() -> void:

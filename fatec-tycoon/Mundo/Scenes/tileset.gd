@@ -20,7 +20,7 @@ var input_enabled := true
 @onready var tile_map: TileMapLayer = $TileMap
 @onready var ui_node: Node = $UI
 const GAME_OVER_SCENE = preload("res://Mundo/Scenes/game_over_scene.tscn")
-
+const TUTORIAL = preload("res://Mundo/Scenes/Tutorial.tscn")
 var used_tiles: Array[Vector2i] = []
 
 func _process(delta: float) -> void:
@@ -31,6 +31,8 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	passarim_audio.play()
 	instanciar_HUD()
+	var tutorial_instance = TUTORIAL.instantiate()
+	$UI.add_child(tutorial_instance)
 
 func instanciar_HUD() -> void:
 	var hud_instance = HUD_scene.instantiate()

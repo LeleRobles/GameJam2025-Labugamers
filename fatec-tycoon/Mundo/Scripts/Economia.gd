@@ -7,7 +7,7 @@ signal ciclo_concluido(conhecimento, ganho, novo_saldo)
 var dinheiro: float = 1000.0
 var conhecimento: int = 0
 var verba_base: float = 100.0  # valor base ganho por ciclo
-var ciclo_duracao: float = 10.0  # 1 minuto
+var ciclo_duracao: float = 30.0  
 var tempo_ciclo: float = 0.0
 var conhecimento_mult = 1
 var mult_dinheiro = 1
