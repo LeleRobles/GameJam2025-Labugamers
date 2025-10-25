@@ -10,6 +10,10 @@ var verba_base: float = 100.0  # valor base ganho por ciclo
 var ciclo_duracao: float = 10.0  # 1 minuto
 var tempo_ciclo: float = 0.0
 var conhecimento_mult = 1
+var mult_dinheiro = 1
+var preco_ciclo_upg = 200
+var preco_mult_upg = 10000
+var preco_desp_upg = 10000
 
 var predios_construidos: Array = []  # lista de prédios construídos
 var despesas_totais: float = 0.0     # soma das despesas de todos prédios
@@ -29,7 +33,7 @@ func aplicar_ciclo() -> void:
 	var ganho_ciclo = verba_base * (1.0 + bonus_percentual)
 	
 	dinheiro += ganho_ciclo
-	
+	dinheiro = dinheiro * mult_dinheiro
 	if despesas_totais > 0:
 		dinheiro -= despesas_totais
 		if dinheiro < 0:

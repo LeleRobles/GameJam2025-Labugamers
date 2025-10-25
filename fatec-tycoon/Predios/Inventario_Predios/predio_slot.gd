@@ -5,7 +5,6 @@ var data_predio : SlotsPredio : set = set_slot_data
 
 
 @onready var texture_rect: TextureRect = $TextureRect
-@onready var label: Label = $Label
 @export var predio_packed_scene: PackedScene
 @onready var sfx_player: AudioStreamPlayer2D = $PobreAudio
 @onready var constroi_audio: AudioStreamPlayer2D = $ConstroiAudio
@@ -16,7 +15,7 @@ var main_ref  # referência para o Main
 
 func _ready():
 	texture_rect.texture = null
-	label.text = ""
+
 	mouse_entered.connect(_on_hover_entered)
 	mouse_exited.connect(_on_hover_exited)
 	if main_ref == null:
@@ -59,7 +58,6 @@ func set_slot_data(value : SlotsPredio) -> void:
 	if data_predio == null:
 		return
 	texture_rect.texture = data_predio.predio_data.texture
-	label.text = str( data_predio.quantity )
 
 func _on_hover_entered() -> void:
 	if data_predio != null:

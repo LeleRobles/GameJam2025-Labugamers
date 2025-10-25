@@ -12,8 +12,11 @@ func _ready():
 func _update_labels():
 	# Usa os valores atuais da Economia
 	verba_label.text = "💰 Verba Base: " + str(Economia.verba_base)
+	verba_label.add_theme_font_size_override("font_size",20)
 	ganho_label.text = "📘 Ganho por Conhecimento: " + str((Economia.conhecimento * 0.12 * 100))  + "%"
+	ganho_label.add_theme_font_size_override("font_size",20)
 	despesa_label.text = "💸 Despesas: " + str(Economia.despesas_totais)
+	despesa_label.add_theme_font_size_override("font_size",20)
 
 	
 

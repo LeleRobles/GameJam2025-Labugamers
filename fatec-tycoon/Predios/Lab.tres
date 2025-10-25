@@ -5,18 +5,19 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sh4dp"]
 atlas = ExtResource("2_oxl1t")
-region = Rect2(192, 170, 64, 54)
+region = Rect2(112, 33, 48, 95)
 
 [resource]
 script = ExtResource("1_gxplj")
-nome = "Laborátio de Informática"
-preco = 1000.0
+nome = "Laborátorio de Informática"
+preco = 900.0
 descricao = "Laborátorio.
 Preco: 1000
-Buff: da 4 de 
+Buff: x4 de 
 conhecimento a
 mais por ciclo 
 e 125% a mais de verba base.
+Despesas: 270
 "
 texture = SubResource("AtlasTexture_sh4dp")
 buff_multiplicador = 2.5

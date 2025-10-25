@@ -1,11 +1,22 @@
 extends Control
 
 const StatsModal = preload("res://Mundo/Scenes/StatsModal.tscn")
-
+const UPGRADE_MODAL_2 = preload("res://Predios/Inventario_Predios/UpgradeModal2.tscn")
 @onready var dinheiro_text: Label = $GridContainer/HBoxContainer2/HBoxContainer/Dinheiro
 @onready var tempo_text: Label = $GridContainer/HBoxContainer2/HBoxContainer/Tempo
 @onready var ponto_conhecimento_text: Label = $GridContainer/HBoxContainer2/HBoxContainer/PontoConhecimento
 @onready var close_audio: AudioStreamPlayer2D = $CloseAudio
+
+@export var play_texture: Texture
+@export var play_texture_press: Texture
+
+@export var pause_texture: Texture
+@export var pause_texture_press: Texture
+
+@onready var pause_btn: Button = $GridContainer/HBoxContainer2/HBoxContainer2/Pause2
+
+
+
 
 @export var doubleSpeed: Texture
 @export var normalSpeed: Texture
@@ -30,13 +41,16 @@ func _process(delta: float) -> void:
 	var minutos = int(tempo_restante) / 60
 	var segundos = int(tempo_restante) % 60
 	tempo_text.text = "Tempo: %02d:%02d" % [minutos, segundos]
+	tempo_text.add_theme_font_size_override("font_size",25)
 
 
 func _atualizar_dinheiro(novo_valor: float) -> void:
 	dinheiro_text.text = "Dinheiro: " + str(round(novo_valor))
+	dinheiro_text.add_theme_font_size_override("font_size", 25)
 
 func _atualizar_conhecimento(novo_valor: int) -> void:
 	ponto_conhecimento_text.text = "Conhecimento: " + str(novo_valor)
+	ponto_conhecimento_text.add_theme_font_size_override("font_size", 25)
 
 func _atualizar_ciclo(conhecimento: int, ganho: float, novo_saldo: float) -> void:
 	ponto_conhecimento_text.text = "Conhecimento: " + str(conhecimento)
@@ -81,3 +95,8 @@ func _on_stats_pressed() -> void:
 
 	# Opcional: centraliza
 	modal.set_anchors_preset(Control.PRESET_CENTER)
+
+
+func _on_upg_modal_pressed() -> void:
+	var upg = UPGRADE_MODAL_2.instantiate()
+	add_child(upg)# Replace with function body.

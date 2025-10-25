@@ -11,6 +11,7 @@ var global_multiplicador_dinheiro: float = 1.0
 var selected_tile: Vector2i = Vector2i.ZERO
 var predio_shop_scene = preload("res://Predios/Inventario_Predios/shop.tscn")
 var HUD_scene = preload("res://Mundo/Scenes/Ui_HUD.tscn")
+var Upg_hud_scene = preload("res://Mundo/Scenes/Ui_HUD.tscn").instantiate()
 var input_enabled := true
 @export var predio_packed_scene: PackedScene = null
 @export var predios_data: Array[PredioData] = []  # seu array de Resources
@@ -18,9 +19,14 @@ var input_enabled := true
 @export var modal_scene = preload("res://Mundo/Scenes/ModalDinheiro.tscn")
 @onready var tile_map: TileMapLayer = $TileMap
 @onready var ui_node: Node = $UI
-
+const GAME_OVER_SCENE = preload("res://Mundo/Scenes/game_over_scene.tscn")
 
 var used_tiles: Array[Vector2i] = []
+
+func _process(delta: float) -> void:
+	if Economia.dinheiro <= 0:
+		var game_over_instance = GAME_OVER_SCENE.instantiate()
+		$UI.add_child(game_over_instance)
 
 func _ready() -> void:
 	passarim_audio.play()
@@ -33,6 +39,10 @@ func instanciar_HUD() -> void:
 func instanciar_Modal_Dinheiro() -> void:
 	var modal_instance = modal_scene.instantiate()
 	$UI.add_child(modal_instance)
+
+func abrir_HUD_upgrades():
+	var Upg_hud_instance = Upg_hud_scene.instantiate()
+	$UI.add_child(Upg_hud_instance)
 
 func _input(event):
 	if not input_enabled:
@@ -83,8 +93,13 @@ func aplicar_buff(predio_data: PredioData):
 # Buff multiplicador (por exemplo, aumenta ganhos futuros)
 	if predio_data.buff_multiplicador != 1.0:
 		# Exemplo: salva um multiplicador global
-		global_multiplicador_dinheiro *= predio_data.buff_multiplicador
-		if predio_data.nome == "Laborátio de Informática":
-			Economia.conhecimento_mult += 2
-		Economia.verba_base *= predio_data.buff_multiplicador
+		global_multiplicador_dinheiro += predio_data.buff_multiplicador
+		
+
+		Economia.verba_base *= global_multiplicador_dinheiro
 		print(predio_data.nome, "aumentou o multiplicador de dinheiro para", global_multiplicador_dinheiro)
+		
+	if predio_data.nome == "Biblioteca":
+		Economia.conhecimento_mult += 10
+	if predio_data.nome == "Laborátorio de Informática":
+		Economia.conhecimento_mult += 2

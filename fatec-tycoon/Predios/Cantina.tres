@@ -13,7 +13,8 @@ nome = "Cantina"
 preco = 300.0
 descricao = "Cantina.
 Preço: 300
-Dá 50% de verba base a mais."
+Dá 50% de verba base a mais.
+Despesas: 90"
 texture = SubResource("AtlasTexture_awt6c")
-buff_multiplicador = 1.5
+buff_multiplicador = 0.5
 metadata/_custom_type_script = "uid://gocwvwp6h60f"

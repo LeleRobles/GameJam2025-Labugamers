@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://l30vqj0memra"]
+[gd_scene load_steps=7 format=3 uid="uid://l30vqj0memra"]
 
 [ext_resource type="Script" uid="uid://c3xsydfb82ah6" path="res://Mundo/Scripts/modal_dinheiro.gd" id="1_h5hu2"]
 [ext_resource type="Texture2D" uid="uid://da34a6wawskx3" path="res://Assets/Sprites/Sprite sheet for Basic Pack.png" id="1_u5gxo"]
+[ext_resource type="FontFile" uid="uid://buq8ceijr7g0i" path="res://Assets/Fibberish v1.0/Fibberish v1.0/fibberish.ttf" id="2_m52xd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5hu2"]
 texture = ExtResource("1_u5gxo")
@@ -17,11 +18,11 @@ region_rect = Rect2(59, 59, 26, 26)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5gxo"]
 texture = ExtResource("1_u5gxo")
-region_rect = Rect2(275, 212, 90, 25)
+region_rect = Rect2(467, 164, 10, 10)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m52xd"]
 texture = ExtResource("1_u5gxo")
-region_rect = Rect2(275, 178, 90, 27)
+region_rect = Rect2(451, 162, 10, 12)
 
 [node name="Control" type="Control"]
 z_index = 8
@@ -48,6 +49,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m52xd")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_h5hu2")
 text = "Dinheiro Insuficiente!"
@@ -55,7 +57,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="pobre_button" type="Button" parent="Label"]
-custom_minimum_size = Vector2(100, 30)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -73,7 +75,6 @@ theme_override_font_sizes/font_size = 13
 theme_override_styles/hover = SubResource("StyleBoxTexture_u5gxo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u5gxo")
 theme_override_styles/normal = SubResource("StyleBoxTexture_m52xd")
-text = "Ok sou pobre"
 icon_alignment = 1
 
 [connection signal="pressed" from="Label/pobre_button" to="." method="_on_pobre_button_pressed"]

@@ -1,14 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbpjysgobfum0"]
 
-[ext_resource type="Texture2D" uid="uid://iactduhjdfse" path="res://Assets/Sprites/CP_V1.1.0_nyknck/CP_V1.0.4_nyknck/CP_V1.0.4.png" id="1_83a45"]
+[ext_resource type="Script" uid="uid://bs63p87xgudwf" path="res://Mundo/Scenes/prédio.gd" id="1_l2c28"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oss27"]
-atlas = ExtResource("1_83a45")
-region = Rect2(288, 176, 48, 48)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0m5"]
 
 [node name="Prédio" type="Node2D"]
+script = ExtResource("1_l2c28")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-texture = SubResource("AtlasTexture_oss27")
 centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_cm0m5")
